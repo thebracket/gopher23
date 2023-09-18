@@ -1,0 +1,14 @@
+[package]
+name = "gophercon2023"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+
+[workspace]
+members = [
+    "projects/hello_server",
+    "projects/blog_server",
+    "projects/blog_client",
+    "projects/blog_server_db",
+]
