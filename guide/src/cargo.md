@@ -6,45 +6,69 @@
 
 ### Creating Projects
 
-* `cargo new` (`cargo init` is an alias): create a new project. If you append `--lib` to the command, it will create a library project instead of a binary project.
+Command | Go Equivalent | Description
+--- | --- | ---
+`cargo new` | `go mod init` | Create a new project.
+`cargo init` | `go mod init` | Create a new project (alias for `cargo new`)
+`cargo new --lib` | `go mod init` | Create a new library project.
+`cargo new --vcs none` | - | Create a new project without `git` integration.
 
 ### Building Projects
 
 > Cargo isn't a compiler. Cargo is more like `cmake` in the C++ world in that it builds instructions for building your project (using `rustc`), and issues the build commands.
 
-* `cargo build`: build the project. If you append `--release` to the command, it will build the project in release mode, which will optimize the code. If you append `--verbose` to the command, it will print out more information about the build process. The compiled program/library will be in `target/debug` or `target/release` depending on the build mode.
-* `cargo run`: build and run the project. If you append `--release` to the command, it will build the project in release mode, which will optimize the code. If you append `--verbose` to the command, it will print out more information about the build process.
-* `cargo check`: check the project for errors, but do not build it. This is faster than `cargo build` and is useful for quickly checking if the project compiles.
+Command | Go Equivalent | Description
+--- | --- | ---
+`cargo build` | `go build -gcflags "all=-N -l" github.com/my/package` | Build the project in `debug` mode. No optimizations, debug information included in the binary. Also includes extra runtime checks for integer overflow/wrapping.
+`cargo build --release` | `go build` | Build the project in `release` mode. Optimized, no debug information included in the binary. No extra runtime checks.
+`cargo run` | `go run -gcflags "all=-N -l"` | Build the project and execute it in `debug` mode.
+`cargo run --release` | `go run` | Build the project and execute it in `release` mode.
+`cargo run -- --param1` | - | Build the project and execute it in `debug` mode, passing `--param1` to the binary.
+`cargo check` | - | Check the project for errors, but do not build it. This is very fast, and is useful for quickly checking if the project compiles. Most IDEs run this regularly.
+`cargo clean` | `go clean` | Remove the `target` directory. This is useful if you want to ensure that you are building from scratch, or if you want to remove the `target` directory to save space.
 
 ### Maintaining Projects
 
-* `cargo clippy`: run the Clippy Linter against your project, warning of potential issues and making suggestions.
-* `cargo fmt`: run the Rustfmt Formatter against your project, formatting your code according to the Rust Style Guide.
-* `cargo fix`: run the Rustfix tool against your project, automatically fixing some common errors.
+Command | Go Equivalent | Description
+--- | --- | ---
+`cargo clippy` | `go vet` | Run the Clippy linter, which will advise you on potential issues and suggest improvements.
+`cargo fmt` | `go fmt` | Run the Rustfmt formatter, which will format your code according to the Rust Style Guide. You can customize the style guide by creating a `.rustfmt.toml` file in your project directory.
+`cargo fix` | `go fix` | Run the Rustfix tool, which will automatically fix some common errors.
 
 ### Testing Projects
 
-* `cargo test`: run all unit tests in the project.
+Command | Go Equivalent | Description
+--- | --- | ---
+`cargo test` | `go test` | Run all unit tests in the project. Unlike Go, unit tests by default are included in the source files they are testing.
 
 ### Benchmarking Projects
 
-* `cargo bench`: run all benchmarks in the project.
+Command | Go Equivalent | Description
+--- | --- | ---
+`cargo bench` | `go test -bench .` | Run all benchmarks in the project.
 
 ### Documenting Projects
 
-* `cargo doc`: generate documentation for the project. The documentation will be in `target/doc`.
+Command | Go Equivalent | Description
+--- | --- | ---
+`cargo doc` | `go doc` | Generate documentation for the project. The documentation will be in `target/doc`.
 
 ### Managing Dependencies
 
-* `cargo search`: search for a crate on [crates.io](https://crates.io).
-* `cargo add`: add a dependency to the project. If you append `--dev` to the command, it will add the dependency to the development dependencies instead of the normal dependencies. You can use the `-F` flag to specify a *feature flag*.
-* `cargo vendor`: download all dependencies and give you some commands to add to `Cargo.toml` to use the vendored dependencies. Once vendored, dependencies are not downloaded from the internet, but are instead downloaded from the local filesystem. I used this for the GopherCon project to ensure that the project would build even if the internet connection was down.
-* `cargo update`: update all dependencies to the latest version. If you append `--aggressive` to the command, it will update all dependencies to the latest version, even if the latest version breaks the build. You can also use `--dry-run` to see what would change without applying it.
-* `cargo publish`: publish your crate to [crates.io](https://crates.io). You can use `--dry-run` to see what would change without applying it.
+Command | Go Equivalent | Description
+--- | --- | ---
+`cargo search` | - | Search [crates.io](https://crates.io) for a crate.
+`cargo add` | - | Add a dependency to the project. This is the same as adding it to the `[dependencies]` section of `Cargo.toml`
+`cargo update` | - | Update all dependencies to the latest version.
+`cargo update --aggressive` | - | Update all dependencies to the latest version, even if the latest version breaks the build.
+`cargo update --dry-run` | - | Show what would change without applying it.
+`cargo publish` | - | Publish your crate to [crates.io](https://crates.io).
+`cargo publish --dry-run` | - | Show what would change without applying it.
+`cargo vendor` | - | Download all dependencies and give you some commands to add to `Cargo.toml` to use the vendored dependencies. Once vendored, dependencies are not downloaded from the internet, but are instead downloaded from the local filesystem.
 
 ## Third-Party Commands
 
-You can also use Cargo to install third-party commands. For example:
+You can also use Cargo to install third-party commands. Some popular cargo extensions include:
 
 * `cargo install mdbook` installs the `mdbook` tool that was used to create this workbook.
 * `cargo install cargo-audit` installs a tool that can check your dependencies for security vulnerabilities.
@@ -52,4 +76,4 @@ You can also use Cargo to install third-party commands. For example:
 * `cargo install cargo-watch` gives you a handy tool that will watch your project for changes and automatically rebuild it.
 * `cargo install cargo-edit` gives you a handy tool that will let you add, remove, and upgrade dependencies from the command line.
 
-And so on---there are a *lot* of available plugins!
+And so on---there are a [lot of available plugins](https://crates.io/categories/development-tools::cargo-plugins)!

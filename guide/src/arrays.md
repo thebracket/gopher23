@@ -108,6 +108,26 @@ fn is_login_valid(username: &str, password: &str) -> bool {
 fn main() {
     println!("Is login valid? {}", is_login_valid("herbert", "password"));
 }
-``````
+```
 
 > There are actually *two* types of iterator acquisition functions. `iter()` iterates over *references* to the data. `into_iter()` moves each item into the iterator---destroying the original. We could use `into_iter()` safely here, but it's a good habit to use `iter()` unless you need to move the data.
+
+The `find` function accepts a *closure* as a parameter. A closure is a special type of inline function defined as follows:
+
+```
+|params| body
+```
+
+Or:
+
+```
+|params| {
+    body
+}
+```
+
+Closures can reference in-scope variables outside of the closure. They can also be passed around as parameters to functions. Closures are *very* powerful, and Rust uses them everywhere.
+
+In the case of `find`, the function returns `true` if a record matches the search parameters.
+
+`find` returns an `Option`---so it is either `Some(&the data)` or `None`. The `is_some()` function is a helper to indicate that the option *has* some data (there's also `is_none`) without granting access to it. You can always `unwrap()` a value safely if you've already checked that it exists.

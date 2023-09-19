@@ -191,7 +191,7 @@ fn main() {
 
 You can't get to the contents of an `Option` without accessing the contents. There's a few ways to do this:
 
-You can **unwrap** the value. This will panic---crash your thread---if there is nothing there. This is a bad idea unless you are 100% sure that there is a contained value, or not having a value actually is fatal to your program:
+You can **unwrap** the value. This will panic---crash your thread---if there is nothing there. (Most programs will terminate when you `panic`---you are saying "this can't happen!" and choosing crashing over corrupting data. If you are using multiple threads, the thread will stop---and emit a stack trace on the console---but other threads can keep running.) This is a bad idea unless you are 100% sure that there is a contained value, or not having a value actually is fatal to your program:
 
 ```rust,should_panic
 fn main() {

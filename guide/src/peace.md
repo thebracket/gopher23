@@ -2,7 +2,7 @@
 
 I'm not here to start a language fight! Go is a great language, and I'm absolutely not here as an evangelist. I find the constant replies of "rewrite it in Rust!" irritating, too!
 
-(graphic)
+![](./RustAndGo.png)
 
 GopherCon is an odd place to be talking about Rust! 
 

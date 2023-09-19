@@ -17,6 +17,7 @@
 - [Vectors of Users](./vectors.md)
 - [HashMaps](./hashmaps.md)
 - [Serialization](./serialize.md)
+- [Threads](./threads.md)
 - [Async Rust](./async.md)
 - [Futures](./futures.md)
 - [Web Service](./webservice1.md)

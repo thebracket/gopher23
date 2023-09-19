@@ -39,3 +39,5 @@ cargo run
 ```
 
 You'll notice that you only have the one `target` directory. This is really helpful when you are building libraries and consumers together, or working with a lot of dependencies---you don't have to recompile the dependencies every time, and you only download them once.
+
+> Workspaces share compilation flags. If you need to customize your build, you can do so in the `Cargo.toml` of the workspace, and it will apply to all projects.

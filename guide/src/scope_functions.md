@@ -4,7 +4,7 @@ So what about functions? Functions introduce a scope, and it acts like scopes ev
 
 ```rust
 fn double(n: i32) -> i32 {
-    n * 2
+    n * 2 // Implicit return - no semicolon. You can also use `return n * 2;`
 }
 
 fn main() {

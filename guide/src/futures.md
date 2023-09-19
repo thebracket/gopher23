@@ -175,3 +175,24 @@ async fn main() {
 So there you have it: you can bridge the async and sync worlds with `spawn_blocking`. You can have the power of system threads, and the throughput of async tasks---all at once. You can even call `rayon` and other helpers to make threading easy.
 
 > Note: you can use `rayon` inside `async` functions, too. You don't have to spawn it into a blocking thread---but if its going to take a while, you should.
+
+## Async Channels
+
+The async world has channels, too. Tokio provides a full async/await implementation of MPSC and Broadcast channels, and many more are available in `crates.io`.
+
+Here's a simple example:
+
+```rust
+use tokio::sync::mpsc;
+
+#[tokio::main]
+async fn main() {
+    let (tx, mut rx) = mpsc::channel(32);
+    tokio::spawn(async move {
+        tx.send("Hello").await.unwrap();
+    });
+    println!("{:?}", rx.recv().await.unwrap());
+}
+```
+
+Notice how it's just the same as the threaded version---but with `await`? The async world largely mirrors the synchronous world.

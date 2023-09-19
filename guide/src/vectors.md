@@ -84,6 +84,8 @@ fn main() {
 
 > C programmers who come to Rust tend to complain that everything is a vector. Vec really is everywhere in Rust. Many of the other collection types even use Vec as a basis. Vec is *really* efficient: it's guaranteed that the entries will be contiguous in memory, making it very cache friendly. It's also guaranteed that the entries will be in the same order as you inserted them, which is not true for HashMaps and other collections.
 
+> Go programmers have access to slices, which work a lot like Rust vectors.
+
 ## Some Helpful Vector and Iterator Functions
 
 ### Length Checks
@@ -168,17 +170,3 @@ fn main() {
     println!("{chunks:?}");
 }
 ```
-
-And using the `rayon` crate, you can even auto-parallelize your calculations:
-
-```rust
-use rayon::prelude::*;
-
-fn main() {
-    let numbers: Vec<u32> = (0..100).collect();
-    let sum: u32 = numbers.par_iter().sum();
-    println!("{sum}");
-}
-```
-
-This will divide the numbers vector into a number of chunks equal to how many CPUs you have, and distribute the `sum` task across all CPUs. It's a great way to get a speedup on your calculations. Just be aware that this is "easy mode"---if you have other threads doing things, you'll need to be careful about total load. You'll need to worry about locking and synchronizing for shared data. Rust's great at that, and we'll be looking at it in a later chapter.
