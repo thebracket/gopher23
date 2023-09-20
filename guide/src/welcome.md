@@ -17,9 +17,12 @@ I'm Herbert Wolverson, Rust Lead with [Ardan Labs](https://www.ardanlabs.com/). 
 
 ## Accessing This Presentation
 
+This presentation is available at: [https://bfnightly.bracketproductions.com/gopher23/welcome.html](https://bfnightly.bracketproductions.com/gopher23/welcome.html)
+
+The source code repo (including this guide) is on Github: [https://github.com/thebracket/gopher23](https://github.com/thebracket/gopher23)
+
+The full version of the class notes are also available: [https://github.com/thebracket/ArdanUltimateRust-5Days](https://github.com/thebracket/ArdanUltimateRust-5Days)
 
 ## Format for Today
 
-4 Hours is a long time to sit still! We'll take a short break around the end of each hour, so you can stretch your legs and get some water. If you get *really* stuck, I'll try and help you during the break. Otherwise, Bill is here to help you out--just raise your hand and he'll come over.
-
-> Please add your name and email address to the sign-in sheet being passed around. We'll use it to send you a link to the slides and code after the talk, and enter you into a raffle for a free copy of *Hands-on Rust* or *Rust-Brain Teasers*.
+4 Hours is a long time to sit still! We'll take a short break around the end of each hour, so you can stretch your legs and get some water. If you get *really* stuck, I'll try and help you during the break. 
