@@ -152,8 +152,8 @@ In this case, you probably want to *move* the point out of the constructor and n
 ```rust
 struct Point { x: i32, y: i32 }
 
-fn new_point<'a>() -> Point {
-    Point { x: 10, y: 20 };
+fn new_point() -> Point {
+    Point { x: 10, y: 20 }
 }
 
 fn main() {

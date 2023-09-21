@@ -236,6 +236,175 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a2bd12c1caf447e69cd4528f47f94d203fd2582878ecb9e9465484c4148a8223"
 
 [[package]]
+name = "c01_hello_world"
+version = "0.1.0"
+
+[[package]]
+name = "c04_variables"
+version = "0.1.0"
+
+[[package]]
+name = "c05_scopes"
+version = "0.1.0"
+
+[[package]]
+name = "c06_scope_fn"
+version = "0.1.0"
+
+[[package]]
+name = "c07_lifetimes"
+version = "0.1.0"
+
+[[package]]
+name = "c07_move_borrow_clone"
+version = "0.1.0"
+
+[[package]]
+name = "c08_structs"
+version = "0.1.0"
+
+[[package]]
+name = "c09_drop"
+version = "0.1.0"
+
+[[package]]
+name = "c09_drop_arc"
+version = "0.1.0"
+
+[[package]]
+name = "c09_drop_move"
+version = "0.1.0"
+
+[[package]]
+name = "c10_option"
+version = "0.1.0"
+
+[[package]]
+name = "c10_result"
+version = "0.1.0"
+
+[[package]]
+name = "c10_simple_login"
+version = "0.1.0"
+
+[[package]]
+name = "c10_simple_login_enum"
+version = "0.1.0"
+
+[[package]]
+name = "c10_simple_login_enum_with_dat"
+version = "0.1.0"
+
+[[package]]
+name = "c10_simple_login_match"
+version = "0.1.0"
+
+[[package]]
+name = "c10_simple_login_match_direct"
+version = "0.1.0"
+
+[[package]]
+name = "c10_simple_login_match_is_exhaustive"
+version = "0.1.0"
+
+[[package]]
+name = "c11_array"
+version = "0.1.0"
+
+[[package]]
+name = "c11_array_search"
+version = "0.1.0"
+
+[[package]]
+name = "c12_vector"
+version = "0.1.0"
+
+[[package]]
+name = "c13_hashmap"
+version = "0.1.0"
+
+[[package]]
+name = "c13_hashmap_bench"
+version = "0.1.0"
+
+[[package]]
+name = "c14_serde_json"
+version = "0.1.0"
+dependencies = [
+ "serde",
+ "serde_json",
+ "serde_yaml",
+ "toml",
+]
+
+[[package]]
+name = "c14_serde_nested"
+version = "0.1.0"
+dependencies = [
+ "serde",
+ "serde_json",
+]
+
+[[package]]
+name = "c15_atomic"
+version = "0.1.0"
+
+[[package]]
+name = "c15_channel"
+version = "0.1.0"
+
+[[package]]
+name = "c15_hello_thread"
+version = "0.1.0"
+
+[[package]]
+name = "c15_hello_thread_scope"
+version = "0.1.0"
+
+[[package]]
+name = "c16_async_init"
+version = "0.1.0"
+dependencies = [
+ "tokio",
+]
+
+[[package]]
+name = "c16_async_init_easy"
+version = "0.1.0"
+dependencies = [
+ "tokio",
+]
+
+[[package]]
+name = "c17_async_channels"
+version = "0.1.0"
+dependencies = [
+ "tokio",
+]
+
+[[package]]
+name = "c17_futures"
+version = "0.1.0"
+dependencies = [
+ "tokio",
+]
+
+[[package]]
+name = "c17_futures_blocking"
+version = "0.1.0"
+dependencies = [
+ "tokio",
+]
+
+[[package]]
+name = "c17_futures_spawn_blocking"
+version = "0.1.0"
+dependencies = [
+ "rayon",
+ "tokio",
+]
+
+[[package]]
 name = "cc"
 version = "1.0.83"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -310,6 +479,30 @@ name = "crc-catalog"
 version = "2.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9cace84e55f07e7301bae1c519df89cdad8cc3cd868413d3fdbdeca9ff3db484"
+
+[[package]]
+name = "crossbeam-deque"
+version = "0.8.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ce6fd6f855243022dcecf8702fef0c297d4338e226845fe067f6341ad9fa0cef"
+dependencies = [
+ "cfg-if",
+ "crossbeam-epoch",
+ "crossbeam-utils",
+]
+
+[[package]]
+name = "crossbeam-epoch"
+version = "0.9.15"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ae211234986c545741a7dc064309f67ee1e5ad243d0e48335adc0484d960bcc7"
+dependencies = [
+ "autocfg",
+ "cfg-if",
+ "crossbeam-utils",
+ "memoffset",
+ "scopeguard",
+]
 
 [[package]]
 name = "crossbeam-queue"
@@ -924,6 +1117,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8f232d6ef707e1956a43342693d2a31e72989554d58299d7a88738cc95b0d35c"
 
 [[package]]
+name = "memoffset"
+version = "0.9.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "5a634b1c61a95585bd15607c6ab0c4e5b226e695ff2800ba0cdccddf208c406c"
+dependencies = [
+ "autocfg",
+]
+
+[[package]]
 name = "mime"
 version = "0.3.17"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1258,6 +1460,26 @@ dependencies = [
 ]
 
 [[package]]
+name = "rayon"
+version = "1.8.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9c27db03db7734835b3f53954b534c91069375ce6ccaa2e065441e07d9b6cdb1"
+dependencies = [
+ "either",
+ "rayon-core",
+]
+
+[[package]]
+name = "rayon-core"
+version = "1.12.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "5ce3fb6ad83f861aac485e76e1985cd109d9a3713802152be56c3b1f0e0658ed"
+dependencies = [
+ "crossbeam-deque",
+ "crossbeam-utils",
+]
+
+[[package]]
 name = "redox_syscall"
 version = "0.3.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1436,6 +1658,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "serde_spanned"
+version = "0.6.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "96426c9936fd7a0124915f9185ea1d20aa9445cc9821142f0a73bc9207a2e186"
+dependencies = [
+ "serde",
+]
+
+[[package]]
 name = "serde_urlencoded"
 version = "0.7.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1445,6 +1676,19 @@ dependencies = [
  "itoa",
  "ryu",
  "serde",
+]
+
+[[package]]
+name = "serde_yaml"
+version = "0.9.25"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1a49e178e4452f45cb61d0cd8cebc1b0fafd3e41929e996cef79aa3aca91f574"
+dependencies = [
+ "indexmap 2.0.0",
+ "itoa",
+ "ryu",
+ "serde",
+ "unsafe-libyaml",
 ]
 
 [[package]]
@@ -1918,6 +2162,40 @@ dependencies = [
 ]
 
 [[package]]
+name = "toml"
+version = "0.8.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c226a7bba6d859b63c92c4b4fe69c5b6b72d0cb897dbc8e6012298e6154cb56e"
+dependencies = [
+ "serde",
+ "serde_spanned",
+ "toml_datetime",
+ "toml_edit",
+]
+
+[[package]]
+name = "toml_datetime"
+version = "0.6.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7cda73e2f1397b1262d6dfdcef8aafae14d1de7748d66822d3bfeeb6d03e5e4b"
+dependencies = [
+ "serde",
+]
+
+[[package]]
+name = "toml_edit"
+version = "0.20.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8ff63e60a958cefbb518ae1fd6566af80d9d4be430a33f3723dfc47d1d411d95"
+dependencies = [
+ "indexmap 2.0.0",
+ "serde",
+ "serde_spanned",
+ "toml_datetime",
+ "winnow",
+]
+
+[[package]]
 name = "tower"
 version = "0.4.13"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2022,6 +2300,12 @@ name = "unicode_categories"
 version = "0.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "39ec24b3121d976906ece63c9daad25b85969647682eee313cb5779fdd69e14e"
+
+[[package]]
+name = "unsafe-libyaml"
+version = "0.2.9"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f28467d3e1d3c6586d8f25fa243f544f5800fec42d97032474e17222c2b75cfa"
 
 [[package]]
 name = "url"
@@ -2239,6 +2523,15 @@ name = "windows_x86_64_msvc"
 version = "0.48.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ed94fce61571a4006852b7389a063ab983c02eb1bb37b47f8272ce92d06d9538"
+
+[[package]]
+name = "winnow"
+version = "0.5.15"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7c2e3184b9c4e92ad5167ca73039d0c42476302ab603e2fec4487511f38ccefc"
+dependencies = [
+ "memchr",
+]
 
 [[package]]
 name = "winreg"
