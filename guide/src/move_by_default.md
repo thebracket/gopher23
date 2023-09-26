@@ -134,7 +134,7 @@ A similar Rust program won't compile at all:
 ```rust
 struct Point { x: i32, y: i32 }
 
-fn new_point<'a>() -> &'a Point {
+fn new_point() -> Point {
     let point = Point { x: 10, y: 20 };
     &point
 }
@@ -167,7 +167,7 @@ If you actually *need* heap allocation, you can use a `Box`:
 ```rust
 struct Point { x: i32, y: i32 }
 
-fn new_point<'a>() -> Box<Point> {
+fn new_point() -> Box<Point> {
     Box::new(Point { x: 10, y: 20 })
 }
 
