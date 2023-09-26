@@ -1,1 +1,1 @@
-![](./ClassBanner.png)
+![](./ClassBanner2.png)
