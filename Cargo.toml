@@ -49,3 +49,9 @@ members = [
     "projects/chapters/c17_futures_spawn_blocking",
     "projects/chapters/c17_async_channels",
 ]
+
+[source.crates-io]
+replace-with = "vendored-sources"
+
+[source.vendored-sources]
+directory = "vendor"

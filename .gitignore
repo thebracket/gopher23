@@ -1,3 +1,4 @@
 guide/book
 target/
 projects/blog_server_db/blog.db*
+vendor/

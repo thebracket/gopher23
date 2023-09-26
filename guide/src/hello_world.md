@@ -2,7 +2,7 @@
 
 If you've played with Rust a bit, you'll have seen this. But let's start at the beginning, and make sure your toolchains are good to go.
 
-You should have Rust installed via https://RustUp.rs - you'll need it, and a text editor to proceed.
+You should have Rust installed via [https://RustUp.rs](https://RustUp.rs) - you'll need it, and a text editor to proceed.
 
 ## Creating a New Project
 
