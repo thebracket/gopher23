@@ -1,7 +1,6 @@
 use axum::{routing::get, Router};
 use std::net::SocketAddr;
 use serde::{Serialize, Deserialize};
-use chrono::{DateTime, Utc};
 use axum::Extension;
 
 use sqlx::FromRow;

@@ -59,6 +59,7 @@ Command | Go Equivalent | Description
 --- | --- | ---
 `cargo search` | - | Search [crates.io](https://crates.io) for a crate.
 `cargo add` | - | Add a dependency to the project. This is the same as adding it to the `[dependencies]` section of `Cargo.toml`
+`cargo tree` | - | Display a tree of all of your project dependencies, showing your dependencies' dependencies.
 `cargo update` | - | Update all dependencies to the latest version.
 `cargo update --aggressive` | - | Update all dependencies to the latest version, even if the latest version breaks the build.
 `cargo update --dry-run` | - | Show what would change without applying it.
